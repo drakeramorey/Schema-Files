@@ -1,0 +1,55 @@
+ <?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://www.aetna.com/cmm/provider/Provider/v7_0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons4="http://www.aetna.com/cmm/common/Identifier/v7_0" xmlns:bons9="http://www.aetna.com/cmm/common/Contact/v7_0" xmlns:bons10="http://www.aetna.com/cmm/common/Person/v7_0" xmlns:bons13="http://www.aetna.com/cmm/common/License/v7_0" xmlns:bons15="http://www.aetna.com/cmm/party/ProviderRole/v7_0">
+<xsd:import namespace="http://www.aetna.com/cmm/common/Identifier/v7_0" schemaLocation="../Common/Identifier_v7_0.xsd"/>
+
+<xsd:import namespace="http://www.aetna.com/cmm/common/Contact/v7_0" schemaLocation="../Common/Contact_v7_0.xsd"/>
+<xsd:import namespace="http://www.aetna.com/cmm/common/Person/v7_0" schemaLocation="../Common/Person_v7_0.xsd"/>
+<xsd:import namespace="http://www.aetna.com/cmm/common/License/v7_0" schemaLocation="../Common/License_v7_0.xsd"/>
+<xsd:import namespace="http://www.aetna.com/cmm/party/ProviderRole/v7_0" schemaLocation="../Party/ProviderRole_v7_0.xsd"/>
+<xsd:complexType name="Provider" abstract="false" mixed="false"><!-- Modified:06/03/2014 9:53:50 PM -->
+<xsd:sequence>
+<xsd:element name="certifications" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="unbounded"><!-- Modified:06/12/2014 10:15:48 PM -->
+<xsd:annotation><xsd:documentation>The name of the certification that the person holds.  Certifications are typically granted by meeting pre-defined requirements, which may include formal training, passing an examination, working a minimum number of professional hours, etc.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="acceptsMedicare" type="xsd:boolean" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:01/09/2015 2:01:17 PM -->
+<xsd:annotation><xsd:documentation>Boolean indicator that, when true, indicates the provider will see medicare patients</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="coverageLevel" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:09/09/2014 3:23:46 PM -->
+<xsd:annotation><xsd:documentation>Indicates the provider's level of benefit coverage (i.e., the amount the plan will reimburse) without regard to networks or policies.  By definition, without any context, the provider is considered 'out-of-network' - so this value is always returned for this class.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="acceptingPatientsIndicator" type="xsd:boolean" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:08/12/2014 9:26:44 PM -->
+<xsd:annotation><xsd:documentation>A yes/no indication of whether the provide is accepting new patients at any office location.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="costEstimateIndicator" type="xsd:boolean" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:08/06/2014 5:42:07 PM -->
+<xsd:annotation><xsd:documentation>Yes/True indicates that the provider's office location allows cost estimates for at least one network.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="trainingPrograms" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="unbounded"><!-- Modified:05/30/2014 7:30:58 PM -->
+<xsd:annotation><xsd:documentation>Also known as 'specialized training programs', these are non-degree training received by the provider.  Certificates may be issued as proof of completion.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="notes" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="unbounded"><!-- Modified:09/15/2014 1:38:12 PM -->
+<xsd:annotation><xsd:documentation>An array of unencoded, end-user readable notes about the provider, meant to communicate specific manually-maintained notes about the provider.  This attribute is not meant to duplicate other data in the APIs.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="nameFull" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/12/2014 9:46:25 AM -->
+<xsd:annotation><xsd:documentation>The fully-formatted name of the individual provider or organization provider (e.g., Dr. John Smith, 3rd or Community General Hospital Walk-in Clinic).</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="alternateIdentifiers" type="bons4:Identifier" minOccurs="0" maxOccurs="unbounded"><!-- Modified:09/12/2014 10:24:49 AM -->
+<xsd:annotation><xsd:documentation>Other provider identifiers, such as National Provider Identifier (NPI) and other identifiers that are not used as internal provider identifiers.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="officeContacts" type="bons9:Contact" minOccurs="0" maxOccurs="unbounded"><!-- Modified:06/27/2014 3:34:11 PM -->
+<xsd:annotation><xsd:documentation>The list of office contacts for this provider (e.g., fax/voice phone, addresses, email addresses, etc.).</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="individualProvider" type="bons10:Person" minOccurs="0" maxOccurs="1"><!-- Modified:06/27/2014 3:33:01 PM -->
+<xsd:annotation><xsd:documentation>The internal identifier of the individual provider (not practicing as part of a group or hospital affiliation).</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="providerLicense" type="bons13:License" minOccurs="0" maxOccurs="unbounded"><!-- Modified:12/12/2014 11:25:27 AM -->
+</xsd:element>
+<xsd:element name="providerRole" type="bons15:ProviderRole" minOccurs="1" maxOccurs="1"><!-- Modified:12/16/2014 12:05:25 PM -->
+</xsd:element>
+<xsd:element name="providerIdentifier" type="bons4:Identifier" minOccurs="1" maxOccurs="1"><!-- Modified:05/27/2014 8:35:16 PM -->
+<xsd:annotation><xsd:documentation>The internal identifier of the provider (e.g., Provider Indentification Number + service location for EPDB).</xsd:documentation></xsd:annotation>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
+
+ 
+
