@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://www.aetna.com/cmm/party/ProviderRole/v7_0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons1="http://www.aetna.com/cmm/common/License/v7_0" xmlns:bons3="http://www.aetna.com/cmm/provider/Provider/v7_0">
+<xsd:import namespace="http://www.aetna.com/cmm/common/License/v7_0" schemaLocation="../Common/License_v7_0.xsd"/>
+<xsd:import namespace="http://www.aetna.com/cmm/provider/Provider/v7_0" schemaLocation="../Provider/Provider_v7_0.xsd"/>
+<xsd:complexType name="ProviderRole" abstract="false" mixed="false"><!-- Modified:12/16/2014 11:42:54 AM -->
+<xsd:sequence>
+<xsd:element name="taxID" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="unbounded"><!-- Modified:12/23/2014 8:36:05 AM -->
+<xsd:annotation><xsd:documentation>A Taxpayer Identification Number (TIN) is an identification number used by the Internal Revenue Service (IRS) in the administration of tax laws. It is issued either by the Social Security Administration (SSA) or by the IRS. A Social Security number (SSN) is issued by the SSA whereas all other TINs are issued by the IRS.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="nationalProviderIdentifier" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="unbounded"><!-- Modified:12/23/2014 8:32:14 AM -->
+<xsd:annotation><xsd:documentation>The National Provider Identifier (NPI) is a Health Insurance Portability and Accountability Act (HIPAA) Administrative Simplification Standard. The NPI is a unique identification number for covered health care providers. Covered health care providers and all health plans and health care clearinghouses must use the NPIs in the administrative and financial transactions adopted under HIPAA. The NPI is a 10-position, intelligence-free numeric identifier (10-digit number). This means that the numbers do not carry other information about healthcare providers, such as the state in which they live or their medical specialty.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="providerLicense" type="bons1:License" minOccurs="0" maxOccurs="unbounded"><!-- Modified:12/16/2014 12:02:52 PM -->
+</xsd:element>
+<xsd:element name="provider" type="bons3:Provider" minOccurs="0" maxOccurs="unbounded"><!-- Modified:12/16/2014 12:05:25 PM -->
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
+
