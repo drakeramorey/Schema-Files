@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://www.aetna.com/cmm/common/Person/v7_0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons0="http://www.aetna.com/cmm/common/Language/v7_0" xmlns:bons1="http://www.aetna.com/cmm/common/Country/v7_0" xmlns:bons2="http://www.aetna.com/cmm/common/Contact/v7_0">
+<xsd:import namespace="http://www.aetna.com/cmm/common/Language/v7_0" schemaLocation="../Common/Language_v7_0.xsd"/>
+<xsd:import namespace="http://www.aetna.com/cmm/common/Country/v7_0" schemaLocation="../Common/Country_v7_0.xsd"/>
+<xsd:import namespace="http://www.aetna.com/cmm/common/Contact/v7_0" schemaLocation="../Common/Contact_v7_0.xsd"/>
+<xsd:complexType name="Person" abstract="false" mixed="false"><!-- Modified:06/03/2014 10:07:47 PM -->
+<xsd:sequence>
+<xsd:element name="nameFirst" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/08/2014 2:51:50 PM -->
+<xsd:annotation><xsd:documentation>A person's legal first name.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="nameMiddle" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/08/2014 2:52:30 PM -->
+<xsd:annotation><xsd:documentation>A person's legal middle name(s) or initial(s).</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="nameLast" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/08/2014 2:52:06 PM -->
+<xsd:annotation><xsd:documentation>A person's legal last name.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="nameTitle" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/08/2014 2:56:48 PM -->
+<xsd:annotation><xsd:documentation>A formal title of a person's rank or position, typically used for military rank. (e.g., Admiral, Colonel, Sir, etc.).</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="namePrefix" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/08/2014 2:54:30 PM -->
+<xsd:annotation><xsd:documentation>A prefix that precedes a person's name (e.g., Dr., Mrs., etc.).</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="nameSuffix" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/08/2014 2:55:02 PM -->
+<xsd:annotation><xsd:documentation>A suffix that follows a person's name (e.g., D.D.S, PMP, etc.).</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="gender" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/08/2014 2:40:21 PM -->
+<xsd:annotation><xsd:documentation>The gender identification of a human.  Allowable values include 'F' for female, 'M' for male, 'U' for unknown.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="nameFull" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:04/07/2014 2:15:02 PM -->
+<xsd:annotation><xsd:documentation>Derived or entered full name of a person, constructed by manipulating and combining other atomic name fields.  Orchestration rules may vary (e.g., by personal preference or country).  May be entered as an override in cases where the derived value is incorrect or atomic fields are unavailable.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="dateOfDeath" type="xsd:date" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/08/2014 2:38:39 PM -->
+<xsd:annotation><xsd:documentation>The date a human died.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="nameFullPreferred" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/08/2014 2:53:35 PM -->
+<xsd:annotation><xsd:documentation>A complete version of a person's name that they prefer to use.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="nameShortPreferred" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/08/2014 2:53:25 PM -->
+<xsd:annotation><xsd:documentation>A short version of a person's name that they prefer to use.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="dateOfBirth" type="xsd:date" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/08/2014 2:38:29 PM -->
+<xsd:annotation><xsd:documentation>The date a human was born.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="ethnicity" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/08/2014 2:49:56 PM -->
+<xsd:annotation><xsd:documentation>The internationally-accepted code for a person's dominant ethnicity.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="tobaccoUse" type="xsd:boolean" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:06/01/2014 7:58:55 PM -->
+<xsd:annotation><xsd:documentation>Is Yes, if the person has attested that they are a tobacco user.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="languagesSpoken" type="bons0:Language" minOccurs="0" maxOccurs="unbounded"><!-- Modified:08/06/2014 5:47:52 PM -->
+<xsd:annotation><xsd:documentation>A list of languages that a person can communicate in.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="languagePreferred" type="bons0:Language" minOccurs="1" maxOccurs="1"><!-- Modified:05/12/2014 5:13:27 PM -->
+<xsd:annotation><xsd:documentation>The language code that the person prefers for communications.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="citizenshipsAlternate" type="bons1:Country" minOccurs="0" maxOccurs="unbounded"><!-- Modified:06/29/2014 10:03:13 PM -->
+<xsd:annotation><xsd:documentation>Alternate citizenships held by an individual that are not the self-declared 'main' or pirmary citizenship.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="citizenshipPrimary" type="bons1:Country" minOccurs="1" maxOccurs="1"><!-- Modified:06/29/2014 10:03:19 PM -->
+<xsd:annotation><xsd:documentation>The citizenship considered to be the 'main' citizenship for an individual.  Because citizenship laws varies by country (with some countries declaring dual citizenship impossible), the primary citizenship is the one self-declared to be the 'main' citizenship.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="contacts" type="bons2:Contact" minOccurs="0" maxOccurs="unbounded"><!-- Modified:05/12/2014 5:06:56 PM -->
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
