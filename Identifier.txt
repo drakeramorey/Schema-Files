@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://www.aetna.com/cmm/common/Identifier/v7_0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+<xsd:complexType name="Identifier" abstract="false" mixed="false"><!-- Modified:05/22/2014 10:08:41 AM -->
+<xsd:sequence>
+<xsd:element name="idSource" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:06/18/2014 9:32:56 AM -->
+<xsd:annotation><xsd:documentation>The source of the associated identifier value, which represents the originator of the identifier, i.e., the system or organization that generated the identifier.  This enumerated list of enterprise-wide numeric values is maintained in a central location.  Any given system or organization may be assigned several idSource values, if that system creates identifiers for more than one resource.  The idSource field determines the content and format of the idValue field.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="idValue" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/30/2014 7:11:57 PM -->
+<xsd:annotation><xsd:documentation>Combined with IDSource, is the unique identifier for one occurrence of the attached object (e.g., the unique identifier assigned to a membership resource).  In some cases, the identifier value is a composite made up from multiple back-end identifiers, separated by plus signs, e.g., part1+part2+part3.  This requires that NO identifier part ever contains a plus sign.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="idType" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/30/2014 7:12:01 PM -->
+<xsd:annotation><xsd:documentation>Specifies the Common Message Model class name (aka Business Object name) that this identifer relates to (e.g., Membership or Provider).</xsd:documentation></xsd:annotation>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
