@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://www.aetna.com/cmm/common/Website/v7_0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+<xsd:complexType name="Website" abstract="false" mixed="false"><!-- Modified:06/03/2014 10:09:15 PM -->
+<xsd:sequence>
+<xsd:element name="webHyperlink" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:06/12/2014 9:33:17 PM -->
+<xsd:annotation><xsd:documentation>A Uniform Resource Locator (URL) that points to a web site.</xsd:documentation></xsd:annotation>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
