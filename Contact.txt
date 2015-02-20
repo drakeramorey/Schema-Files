@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://www.aetna.com/cmm/common/Contact/v7_0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons0="http://www.aetna.com/cmm/common/Phone/v7_0" xmlns:bons1="http://www.aetna.com/cmm/common/Website/v7_0" xmlns:bons2="http://www.aetna.com/cmm/common/Language/v7_0" xmlns:bons3="http://www.aetna.com/cmm/common/EmailAddress/v7_0" xmlns:bons4="http://www.aetna.com/cmm/common/PostalAddress/v7_0">
+<xsd:import namespace="http://www.aetna.com/cmm/common/Phone/v7_0" schemaLocation="../Common/Phone_v7_0.xsd"/>
+<xsd:import namespace="http://www.aetna.com/cmm/common/Website/v7_0" schemaLocation="../Common/Website_v7_0.xsd"/>
+<xsd:import namespace="http://www.aetna.com/cmm/common/Language/v7_0" schemaLocation="../Common/Language_v7_0.xsd"/>
+<xsd:import namespace="http://www.aetna.com/cmm/common/EmailAddress/v7_0" schemaLocation="../Common/EmailAddress_v7_0.xsd"/>
+<xsd:import namespace="http://www.aetna.com/cmm/common/PostalAddress/v7_0" schemaLocation="../Common/PostalAddress_v7_0.xsd"/>
+<xsd:complexType name="Contact" abstract="false" mixed="false"><!-- Modified:06/01/2014 9:56:29 PM -->
+<xsd:sequence>
+<xsd:element name="usage" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:06/01/2014 9:58:18 PM -->
+<xsd:annotation><xsd:documentation>Indicates the usage of this contact, for example, for home or office usage.  Allowable values are: home, office, personal.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="phonesVoice" type="bons0:Phone" minOccurs="0" maxOccurs="unbounded"><!-- Modified:05/12/2014 4:58:11 PM -->
+<xsd:annotation><xsd:documentation>An array of phone numbers used for voice communications.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="webAddresses" type="bons1:Website" minOccurs="0" maxOccurs="unbounded"><!-- Modified:05/12/2014 5:05:37 PM -->
+<xsd:annotation><xsd:documentation>An array of web Uniform Resource Identifiers (URIs) that point web sites that can be displayed in a browser.  Does not include URIs for other purposes, such as RESTful Application Programming Interfaces (APIs).</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="languagesSupported" type="bons2:Language" minOccurs="0" maxOccurs="unbounded"><!-- Modified:08/06/2014 5:57:38 PM -->
+<xsd:annotation><xsd:documentation>A list of languages that a contact method (e.g., phone, web site, etc.) can communicate in.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="phonesFax" type="bons0:Phone" minOccurs="0" maxOccurs="unbounded"><!-- Modified:05/12/2014 4:56:35 PM -->
+<xsd:annotation><xsd:documentation>An array of phone numbers used for faxing documents.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="emailAddresses" type="bons3:EmailAddress" minOccurs="0" maxOccurs="unbounded"><!-- Modified:05/12/2014 5:05:56 PM -->
+<xsd:annotation><xsd:documentation>An array of email addresses.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="postalAddresses" type="bons4:PostalAddress" minOccurs="0" maxOccurs="unbounded"><!-- Modified:05/14/2014 6:40:19 PM -->
+<xsd:annotation><xsd:documentation>An array of postal addresses, which represent a location (e.g., of an office or home).</xsd:documentation></xsd:annotation>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
