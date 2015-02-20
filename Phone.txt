@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://www.aetna.com/cmm/common/Phone/v7_0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons0="http://www.aetna.com/cmm/common/OperationHours/v7_0" xmlns:bons1="http://www.aetna.com/cmm/common/Country/v7_0">
+<xsd:import namespace="http://www.aetna.com/cmm/common/OperationHours/v7_0" schemaLocation="../Common/OperationHours_v7_0.xsd"/>
+<xsd:import namespace="http://www.aetna.com/cmm/common/Country/v7_0" schemaLocation="../Common/Country_v7_0.xsd"/>
+<xsd:complexType name="Phone" abstract="false" mixed="false"><!-- Modified:06/03/2014 10:08:16 PM -->
+<xsd:sequence>
+<xsd:element name="number" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:11/03/2014 7:52:34 AM -->
+<xsd:annotation><xsd:documentation>The in-country number of a given phone communications line. The value must be 1 to 15 digits with no special characters (e.g. '-','.'). </xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="type" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/08/2014 2:34:57 PM -->
+<xsd:annotation><xsd:documentation>Indicates the telephone protocol (e,g, cell, landline, voice over IP, etc.).</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="textLabel" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:11/24/2014 2:07:52 PM -->
+<xsd:annotation><xsd:documentation>The text used to tell the user what the phone number is used for. </xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="extension" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:11/24/2014 2:11:03 PM -->
+<xsd:annotation><xsd:documentation>An extension to the phone number, where applicable.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="hearingImpairedEnabled" type="xsd:boolean" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:11/24/2014 10:55:22 AM -->
+<xsd:annotation><xsd:documentation>Signifies if the associated phone number is used with a device for the hearing impaired (value is 'Yes').</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="operationHours" type="bons0:OperationHours" minOccurs="0" maxOccurs="unbounded"><!-- Modified:05/08/2014 3:31:40 PM -->
+</xsd:element>
+<xsd:element name="country" type="bons1:Country" minOccurs="1" maxOccurs="1"><!-- Modified:05/12/2014 5:11:29 PM -->
+<xsd:annotation><xsd:documentation>An object for the country that the phone number originates from.  The country object includes the international dialing prefix for that country.</xsd:documentation></xsd:annotation>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
