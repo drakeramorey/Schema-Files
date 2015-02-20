@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://www.aetna.com/cmm/common/Language/v7_0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+<xsd:complexType name="Language" abstract="false" mixed="false"><!-- Modified:06/03/2014 10:06:19 PM -->
+<xsd:sequence>
+<xsd:element name="code" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:09/04/2014 3:18:37 PM -->
+<xsd:annotation><xsd:documentation>Internationally-recognized code that represents spoken and/or written natural languages, e.g. 'eng' from the ISO-639 specification.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="description" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:09/04/2014 3:19:30 PM -->
+<xsd:annotation><xsd:documentation>Full descriptive, user-readable name of the language.  If the context is language-sensitive, the name of the language may be returned in another language.  For example, a language code of 'eng' could have a description of 'English' or 'Ingles' or 'Engels' - IF the requestor specified the return language.  The default is the English description.</xsd:documentation></xsd:annotation>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
