@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://www.aetna.com/cmm/common/PostalAddress/v7_0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons0="http://www.aetna.com/cmm/common/OperationHours/v7_0" xmlns:bons1="http://www.aetna.com/cmm/common/Country/v7_0">
+<xsd:import namespace="http://www.aetna.com/cmm/common/OperationHours/v7_0" schemaLocation="../Common/OperationHours_v7_0.xsd"/>
+<xsd:import namespace="http://www.aetna.com/cmm/common/Country/v7_0" schemaLocation="../Common/Country_v7_0.xsd"/>
+<xsd:complexType name="PostalAddress" abstract="false" mixed="false"><!-- Modified:06/01/2014 9:18:42 PM -->
+<xsd:sequence>
+<xsd:element name="state" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/11/2014 11:12:45 AM -->
+<xsd:annotation><xsd:documentation>A geo-political subdivision of a country.  In the U.S., this represents one of the states or possessions.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="postalCode" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:10/28/2014 12:16:27 PM -->
+<xsd:annotation><xsd:documentation>A postal code (known in various countries as a post code, postcode, or ZIP code in USA) is a series of letters and/or digits appended to a postal address for the purpose of sorting mail. For U.S. postal codes, the value  must conform to the format 99999 or 99999-9999 where 9 represents any numeric character. For international postal codes, the value must conform to the format defined at http://en.wikipedia.org/wiki/List_of_postal_codes.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="streetLine1" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:06/01/2014 9:59:46 PM -->
+<xsd:annotation><xsd:documentation>The first line of a street address.  Content varies by a country's postal service rules.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="streetLine2" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:06/01/2014 10:04:19 PM -->
+<xsd:annotation><xsd:documentation>The second line of a postal street address.  Content varies by a country's postal service rules.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="streetLine3" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:06/01/2014 10:04:44 PM -->
+<xsd:annotation><xsd:documentation>The third line of a postal street address.  Content varies by a country's postal service rules.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="city" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/11/2014 11:25:38 AM -->
+<xsd:annotation><xsd:documentation>The city portion of the PostalAddress, as defined by the country's postal service.  </xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="postalBox" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/09/2014 2:52:08 PM -->
+<xsd:annotation><xsd:documentation>Also known as a Post Office Box, can be used in place of a street address to deliver mail to a managed box (typically on a common premises, like a post office or other mail service location).</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="distance" type="xsd:float" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:08/11/2014 5:23:53 PM -->
+<xsd:annotation><xsd:documentation>A calculated field that shows the distance between two geographical locations.  One location is the geographical location represented by the PostalAddress; the other is specifed as an input parameter - and the distance represents the straight-line distance between the two (so it varies for each call).</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="county" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:01/09/2015 1:54:56 PM -->
+<xsd:annotation><xsd:documentation>The name of the county associated with this address.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="countyCode" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:01/09/2015 1:54:26 PM -->
+<xsd:annotation><xsd:documentation>The FIPS county code is a five-digit Federal Information Processing Standard (FIPS) code (FIPS 6-4) which uniquely identifies counties and county equivalents in the United States, certain U.S. possessions, and certain freely associated states. The first two digits are the FIPS state code and the last three are the county code within the state or possession.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="latitude" type="xsd:float" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/09/2014 2:38:37 PM -->
+<xsd:annotation><xsd:documentation>The latitude (geographic coordinate that specifies the north-south position of a point on the Earth's surface) of a postal address in an internationally-recognized format.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="longitude" type="xsd:float" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/09/2014 2:39:09 PM -->
+<xsd:annotation><xsd:documentation>The longitude (geographic coordinate that specifies the east-west position of a point on the Earth's surface) of a postal address in an internationally-recognized format.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="addressType" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:12/12/2014 11:03:56 AM -->
+<xsd:annotation><xsd:documentation>A description as to why the address is of interest :  Field Office, Servicing Location, Administrative Office etc.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="operationHours" type="bons0:OperationHours" minOccurs="0" maxOccurs="unbounded"><!-- Modified:05/08/2014 3:32:09 PM -->
+</xsd:element>
+<xsd:element name="country" type="bons1:Country" minOccurs="1" maxOccurs="1"><!-- Modified:05/12/2014 5:11:53 PM -->
+<xsd:annotation><xsd:documentation>The country portion of the PostalAddress, as defined by the country's postal service.  Countries often follow internationally-recognized lists, but may contain spelling and format variations (e.g., US, U.S., United States, United States of America, etc.)</xsd:documentation></xsd:annotation>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
