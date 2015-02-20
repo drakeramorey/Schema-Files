@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://www.aetna.com/cmm/common/OperationHours/v7_0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons0="http://www.aetna.com/cmm/common/TimeRange/v7_0">
+<xsd:import namespace="http://www.aetna.com/cmm/common/TimeRange/v7_0" schemaLocation="../Common/TimeRange_v7_0.xsd"/>
+<xsd:complexType name="OperationHours" abstract="false" mixed="false"><!-- Modified:06/03/2014 10:07:02 PM -->
+<xsd:sequence>
+<xsd:element name="timeRange" type="bons0:TimeRange" minOccurs="0" maxOccurs="unbounded"><!-- Modified:05/08/2014 3:32:44 PM -->
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
