@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://www.aetna.com/cmm/common/EmailAddress/v7_0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+<xsd:complexType name="EmailAddress" abstract="false" mixed="false"><!-- Modified:07/22/2014 9:44:46 PM -->
+<xsd:sequence>
+<xsd:element name="address" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/12/2014 4:54:13 PM -->
+<xsd:annotation><xsd:documentation>The 'local' portion of an email address, i.e., the portion before the '@' (local@domain).</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="domain" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:06/12/2014 9:32:02 PM -->
+<xsd:annotation><xsd:documentation>The 'domain' portion of an email address, i.e., the portion after the '@' (local@domain).</xsd:documentation></xsd:annotation>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
