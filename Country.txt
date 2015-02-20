@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://www.aetna.com/cmm/common/Country/v7_0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+<xsd:complexType name="Country" abstract="false" mixed="false"><!-- Modified:06/01/2014 9:20:12 PM -->
+<xsd:sequence>
+<xsd:element name="abbreviation" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:07/10/2014 6:35:12 PM -->
+<xsd:annotation><xsd:documentation>The two-character ISO 3166 alphabetic code for a country. This is the preferred general purpose code for machine usage. (http://www.iso.org/iso/country_codes.htm)</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="fullName" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:06/01/2014 9:21:52 PM -->
+<xsd:annotation><xsd:documentation>The full, internationally-recognized name of the country.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="code" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:07/10/2014 6:34:34 PM -->
+<xsd:annotation><xsd:documentation>The three-character ISO 3166 numeric code for a country, which can be useful if you need to avoid using Latin script.   (http://www.iso.org/iso/country_codes.htm)</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="abbreviationReadable" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:07/10/2014 6:35:44 PM -->
+<xsd:annotation><xsd:documentation>The three-character ISO 3166 alphabetic code for a country,  which is more closely related to the country name and easier for humans to read.  (http://www.iso.org/iso/country_codes.htm)</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="dialingPrefix" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:10/28/2014 12:10:13 PM -->
+<xsd:annotation><xsd:documentation>This field represents the international direct dialing (IDD) prefix for the country.  Dialing a phone number preceeded by this prefix routes the call to that country's phone system. The value must be 1 to 3 digits with no special characters (e.g. '-','.'). </xsd:documentation></xsd:annotation>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
