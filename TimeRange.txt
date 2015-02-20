@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://www.aetna.com/cmm/common/TimeRange/v7_0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+<xsd:complexType name="TimeRange" abstract="false" mixed="false"><!-- Modified:06/03/2014 10:09:52 PM -->
+<xsd:sequence>
+<xsd:element name="dayOfWeek" type="xsd:gDay" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:04/30/2014 4:29:42 PM -->
+<xsd:annotation><xsd:documentation>A text representation of one or more days of the week, in natural language (e.g., Sun, Sunday, Sat-Sun, etc.)</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="timeStart" type="xsd:time" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/16/2014 10:33:14 AM -->
+<xsd:annotation><xsd:documentation>The start time ONLY (does not include date) of a time range, in any human-readable format.  e.g., 12:00 PM or 12AM or noon.</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="timeStop" type="xsd:time" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:05/16/2014 10:33:02 AM -->
+<xsd:annotation><xsd:documentation>The stop time ONLY (does not include date) of a time range, in any human-readable format.  e.g., 12:00 PM or 12AM or noon.</xsd:documentation></xsd:annotation>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
