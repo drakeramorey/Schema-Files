@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://www.aetna.com/cmm/common/License/v7_0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons0="http://www.aetna.com/cmm/common/EffectivePeriod/v7_0">
+<xsd:import namespace="http://www.aetna.com/cmm/common/EffectivePeriod/v7_0" schemaLocation="../Common/EffectivePeriod_v7_0.xsd"/>
+<xsd:complexType name="License" abstract="false" mixed="false"><!-- Modified:12/11/2014 2:10:05 PM -->
+<xsd:sequence>
+<xsd:element name="terminationReason" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:12/12/2014 11:05:09 AM -->
+<xsd:annotation><xsd:documentation>The reason the license was cancelled or not renewed</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="licenseNumber" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:12/12/2014 11:04:24 AM -->
+<xsd:annotation><xsd:documentation>The identifier of the particular license</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="licenseType" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:12/12/2014 11:04:32 AM -->
+<xsd:annotation><xsd:documentation>The type of license (Medical License, Drivers License, Broker License etc.)</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="licenseState" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:12/12/2014 11:04:39 AM -->
+<xsd:annotation><xsd:documentation>The state issuing the license</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="originalIssueDate" type="xsd:date" nillable="false" minOccurs="0" maxOccurs="1"><!-- Modified:12/12/2014 11:05:01 AM -->
+<xsd:annotation><xsd:documentation>The date this license was first obtained</xsd:documentation></xsd:annotation>
+</xsd:element>
+<xsd:element name="licenseEffectivePeriod" type="bons0:EffectivePeriod" minOccurs="1" maxOccurs="1"><!-- Modified:12/22/2014 2:50:14 PM -->
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
